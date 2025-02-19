@@ -1,4 +1,10 @@
 // Control flow
+// var , let , const
+let deepak = '34';
+deepak = 'ertrt';
+console.log(deepak)
 
-const usr = "Tiger";
-const password = "password"
+let rahul = "34";
+
+console.log(rahul);
+
