@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is Dom </title>
+    <style>
+        body {
+            background-color: #443;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="bg-black">
+        <h1 id="loper" class="heading"><span style="display:none">i'm hidden</span>Hello DOM Leaning on Chai aur code</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit quasi unde, delectus, corporis expedita iusto maiores velit amet, doloremque praesentium labore at debitis tenetur? Ea nemo obcaecati beatae. Neque, saepe.</p>
+        <input type="text" placeholder="Enter you name" name="text" id="">
+
+    </div>
+    <ul>
+        <li>one</li>
+        <li>two</li>
+        <li>thrid</li>
+    </ul> -->
+    <!-- <script src="./1-Dom.js"></script> -->
+
+    <!-- <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+    </div> -->
+
+    <!-- parent and children -->
+    <script>
+        //const parent = document.querySelector('.parent')
+        //console.log(parent.children)
+        //change the content
+        //console.log(parent.children[0].innerHTML = "Sunday")
+        // to get the children of the parent
+        //console.log(parent.firstElementChild.innerHTML)
+
+
+    </script>
+
+    <!-- creating html elements -->
+    <script>
+        /*
+            const div = document.createElement("div")
+            div.className = "parent"
+        //    div.id = "parentID"
+        div.id = Math.round(Math.random() * 10 + 1)
+        //console.log(div)
+        div.setAttribute('title', 'this is parent Div')
+        div.style.background = "red";
+        div.style.padding = '12px'
+        
+        // above code is all set in memory
+        //div.innerHTML = "hello"
+        const parent = document.createTextNode("Parent Div")
+        div.appendChild(parent)
+        document.body.appendChild(div)*/
+    </script>
+
+
+    <!-- removing -->
+    <ul class="language">
+        <li>Js</li>
+    </ul>
+    <script>
+        /*function addLanguage(name){
+            const li = document.createElement('li');
+            li.innerHTML = `${name}`
+            document.querySelector('.language').appendChild(li)
+        }
+        addLanguage('TypeScript')*/
+        function noTraverse(lng) {
+            const li = document.createElement('li')
+            li.appendChild(document.createTextNode(lng))
+            document.querySelector('.language').appendChild(li)
+        }
+        noTraverse("tie")
+        noTraverse("Tiger")
+        noTraverse("Hello")
+        // let's edit the html
+        const second = document.querySelector('li:nth-child(2)')
+        
+    </script>
+</body>
+
+</html>

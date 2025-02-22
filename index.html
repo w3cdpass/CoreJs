@@ -19,7 +19,72 @@
     <!-- <script src="./8-array.js"></script> -->
     <!-- <script src="./9-reduce.js"></script> -->
     <!-- <script src="./10-tenary-case-while-and-or-operator.js"></script> -->
-    <script src="./11-and-or-operator.js"></script>
+    <!-- <script src="./11-and-or-operator.js"></script> -->
+
+
+    <!-- <label for='weather'>
+        Select the weather type today:
+    </label>
+    <select name="lio" id="weather">
+        <option value="">-Select-Options-</option>
+        <option value="sunny">Sunny</option>
+        <option value="rainy">Rainy</option>
+        <option value="snowing">Snowing</option>
+        <option value="overcast">Overcast</option>
+    </select>
+    <p></p> -->
+
+
+    <!-- <label class="themeSlection" for="theme">Theme select</label>
+    <select name="Background" id="theme">
+        <option value="white">White</option>
+        <option value="black">Black</option>
+    </select> -->
+
+    <!-- Active grid -->
+
+
+    <!-- <script src="./13-conditional-decion.js"></script> -->
+
+    <!-- <input id="demo" type="text" placeholder="enter number between 5-10">
+    <button type="button" onclick="inputvalidation()">Validate</button>
+    <p id="exception"></p>
+    <script src="./14-exceptin-handling-statement.js"></script> -->
+
+    <form id="formdata" action="./data.json" method="get">
+        <label for="name">Enter Name <br>
+            <input name="name" type="text" id="name">
+        </label>
+        <br>
+        <label for="age">Age <br>
+            <input name="age" placeholder="enter age" type="number" id="number">
+        </label>
+        <br>
+        <label for="address">
+            <textarea name="adress" id="adres" placeholder="enter a address"></textarea>
+        </label>
+        <br>
+        <button type="submit" onclick="convertToJson(event)">Sumbit</button>
+        <br>
+        <button type="reset">Reset</button>
+    </form>
+    <script>
+        function convertToJson(event){
+            event.preventDefault()
+            const usrdata = document.getElementById('formdata');
+            const formdata = {}
+            usrdata.querySelectorAll('input, textarea').forEach(ele =>{
+                const name = ele.getAttribute('name');
+                const value = ele.value;
+                if(name){
+                    formdata[name] = value;
+                }
+            });
+            const jsondata = JSON.stringify(formdata, null,2)
+            console.log(jsondata)
+        }
+    </script>
+    <!-- <script src="./15-nested-de-strucuring.js"></script> -->
 </body>
 
 </html>

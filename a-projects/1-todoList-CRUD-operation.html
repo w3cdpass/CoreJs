@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo list</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .note {
+            font-family: monospace;
+            font-size: 12px;
+            color: rebeccapurple;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            margin-top: 50px;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 150px;
+        }
+
+        .inputField {
+            text-align: center;
+            width: 50%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        #inputData {
+            width: 50%;
+            padding: 10px;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        #create {
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background: #31c8a7;
+            font-family: monospace;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .data-list {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+
+            margin-bottom: 10px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+
+        table {
+            background: rgb(186, 192, 186);
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .task {
+            display: flex;
+        }
+
+        #update,
+        #delete {
+            padding: 5px;
+            height: 30px;
+            margin-right: 2px;
+            margin-left: 2px;
+            border-radius: 5px;
+            border: none;
+            font-family: monospace;
+            font-weight: 700;
+            cursor: pointer;
+
+        }
+
+        #update {
+            background: rgb(102, 219, 102);
+        }
+
+        #delete {
+            background: rgb(194, 190, 190);
+        }
+
+        #delete:hover {
+            background: red;
+            color: #fff;
+        }
+
+        .data-Container {
+            display: flex;
+            background: transparent;
+            height: 500px;
+            overflow-y: auto;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="note">Please use SPACEBAR to add second ENTRY</span>
+        <div class="inputField">
+            <input type="text" id="inputData" placeholder="Enter ID, NAME, PASSWORD">
+            <button type="submit" id="create">Create TODO</button>
+        </div>
+        <div class="data-Container">
+        </div>
+        <script src="./1-todoList-CRUD-operation.js"></script>
+</body>
+
+</html>

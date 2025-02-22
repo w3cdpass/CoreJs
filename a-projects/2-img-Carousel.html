@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image Gallery Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #333;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+        }
+
+
+        .grids-Items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+            height: 50vh;
+
+        }
+
+        .img {
+
+            width: 50%;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .img img {
+            width: 100%;
+            height: 50vh;
+            object-fit: cover;
+        }
+
+        .arrow-left,
+        .arrow-right {
+            padding: 5px;
+            background: #333;
+            color: #fff;
+        }
+
+        .arrow-right {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            cursor: pointer;
+        }
+
+        .arrow-left:hover,
+        .arrow-right:hover {
+            background: rebeccapurple;
+        }
+
+        .arrow-left:active,
+        .arrow-right:active {
+            background: black;
+        }
+
+        .arrow-left {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            cursor: pointer;
+        }
+
+        .myslides {
+            display: none;
+        }
+
+        .fade {
+            animation: fade ease;
+            animation-duration: 1.5s;
+        }
+
+        .third {
+            display: none;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .carousel__photo {
+            display: none;
+        }
+
+        .carousel__photo.initial {
+            display: block;
+        }
+
+        .img img {
+            border-radius: 30% 70% 69% 31% / 30% 30% 70% 70%;
+            animation: tiger ease;
+            animation-duration: 500ms;
+            transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes tiger {
+            50% {
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grids-Items">
+            <div><i class="fa-solid fa-angle-left arrow-left carousel__button--next"></i></div>
+            <div class="img fade carousel__photo initial"><img src="./assets/istockphoto-480849669-612x612.jpg" alt="">
+            </div>
+            <div class="img  fade carousel__photo"><img src="./assets/download.jpeg" alt=""></div>
+            <div class="img  fade carousel__photo"><img src="./assets/4070abe3296a746e2059d33e73b16ecb.jpg" alt="">
+            </div>
+            <div class="img  fade carousel__photo"><img
+                    src="./assets/holi-goes-online-as-coronavirus-fears-keep-people-at-home.webp" alt=""></div>
+            <div class="img  fade carousel__photo"><img src="./assets/124.jpg" alt=""></div>
+            <div><i class="fa-solid fa-angle-right arrow-right carousel__button--prev"></i></div>
+        </div>
+    </div>
+    <script>
+        const images = document.querySelectorAll('.carousel__photo');
+        let index = 0;
+
+        function hideAllImages() {
+            images.forEach(image => {
+                image.style.display = 'none';
+
+            });
+        }
+
+        function showImage(i) {
+            hideAllImages();
+            images[i].style.display = 'block';
+        }
+
+        showImage(index);
+
+        document.querySelector('.carousel__button--prev').addEventListener('click', function (e) {
+            e.stopPropagation();
+            index--;
+            if (index < 0) index = images.length - 1;
+            showImage(index);
+        });
+
+        document.querySelector('.carousel__button--next').addEventListener('click', function (e) {
+            e.stopPropagation();
+            index++;
+            if (index >= images.length) index = 0;
+            showImage(index);
+        });
+
+
+
+
+
+        // console.log(extractedImages[4])
+
+
+
+
+        /*document.querySelector('.dot').addEventListener("click", function (e) {
+            e.stopPropagation()
+            const slides = document.querySelector('.myslides')
+            slides.toggle = 
+            document.querySelector('.second').style.display = "none"
+            // document.querySelector('.third').style.display = "block"
+            //document.querySelector('.mstyle').style.display = "none"
+        })*/
+
+    </script>
+    <script src="./test.js"></script>
+</body>
+
+</html>
